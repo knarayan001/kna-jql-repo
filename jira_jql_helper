@@ -1,0 +1,15 @@
+#12/02/15
+#Sample JQL for JIRA dashboards
+#
+#
+
+#no sub-task inheritance automation in any of our workflows.  The philosophy is that fields of sub-tasks are expected to be the same as their parents so we don’t repeat them on the sub-tasks screens.  
+#10/08/2015
+#Create association to an Agile Scrum Board when there exists a Parent - Child relationship and one Key for scrum board display
+
+#Proposed Solution:
+(project=MAINProject and "Scrum Team"= SomeScrumTeam13) or issueFunction in subtasksOf("project=MAINProject and 'Scrum Team'=SomeScrumTeam13") 
+
+#Embedded Filters withing Filters for Ease of Managing dynamic aspects of JQL such as: Scrum Teams per fiscal year in QBO
+project = MAINProject AND issuetype = Bug AND "Environment - QBO" = PRODUCTION AND filter = "QBO Engineering Excellence Metrics Week Date Range (Last Wed-Current Week)"
+
